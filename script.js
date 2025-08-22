@@ -4,16 +4,16 @@ const videos = [
         id: 1,
         title: "We need to talk",
         thumbnail: "https://img.youtube.com/vi/lb-B2zi9DtY/maxresdefault.jpg",
-        description: "A cinematic commercial that showcases masterful storytelling and visual composition in just 7 minutes.",
-        reason: "This video demonstrates how to create compelling narrative tension and emotional impact in a short format. The cinematography and pacing are exceptional examples for video creation.",
+        description: "A masterfully deceptive cinematic piece that feels like a genuine documentary before revealing itself as an advertisement.",
+        reason: "What I love about this is how it manipulates viewer emotions through pure cinematography - it draws you in with documentary-style authenticity, then hits you with the reveal. The visual storytelling is so compelling that you forget you're watching an ad. Perfect example of how to use cinematic techniques to create emotional investment.",
         url: "https://www.youtube.com/watch?v=lb-B2zi9DtY"
     },
     {
         id: 2,
         title: "Mastering Postgres hype video",
         thumbnail: "https://img.youtube.com/vi/moofRHEvCN0/maxresdefault.jpg",
-        description: "An energetic course launch announcement that builds excitement and clearly communicates value proposition.",
-        reason: "Perfect example of how to create hype and anticipation for educational content. The energy and clear messaging make technical topics feel exciting and accessible.",
+        description: "Aaron Francis's behind-the-scenes look at creating his Postgres course, combining promotion with authentic process documentation.",
+        reason: "I love how this feels like DVD bonus features - showing the real process behind creating something rather than just the polished end result. Aaron's authenticity shines through as he documents his journey, making the promotional aspect feel genuine and engaging. It's a masterclass in how to build anticipation by showing your work, not just selling it.",
         url: "https://www.youtube.com/watch?v=moofRHEvCN0"
     },
     {

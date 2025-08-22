@@ -6,7 +6,8 @@
       "WebFetch(domain:www.youtube.com)",
       "WebSearch",
       "Bash(curl:*)",
-      "WebFetch(domain:x.com)"
+      "WebFetch(domain:x.com)",
+      "WebFetch(domain:www.destroyallsoftware.com)"
     ],
     "deny": [],
     "ask": []

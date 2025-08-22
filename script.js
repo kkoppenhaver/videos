@@ -53,6 +53,25 @@ const videos = [
         description: "Jacob Collier explains the concept of harmony to 5 different people at increasing levels of complexity - from a child to jazz legend Herbie Hancock - demonstrating true mastery through adaptive teaching.",
         reason: "This perfectly demonstrates what real understanding looks like - the ability to break down complex concepts at multiple levels shows he truly gets it. By letting viewers check in at whatever level of complexity they're comfortable with, it makes sophisticated music theory accessible while still reaching expert depth. It's educational content that serves everyone simultaneously.",
         url: "https://www.youtube.com/watch?v=eRkgK4jfi6M"
+    },
+    {
+        id: 7,
+        type: "link",
+        title: "Wat",
+        thumbnail: "https://i.imgur.com/KDnr4c9.png",
+        description: "Gary Bernhardt's legendary lightning talk exploring JavaScript's bizarre type coercion behaviors and other programming language quirks through rapid-fire examples.",
+        reason: "A masterclass in technical comedy that manages to be both hilarious and educational. The rapid-fire delivery keeps you engaged while systematically exposing the absurdities in JavaScript's type system. It's the perfect blend of programming insight and entertainment that makes complex concepts memorable through humor.",
+        url: "https://www.destroyallsoftware.com/talks/wat",
+        videoUrl: "https://destroyallsoftware-talks.s3.amazonaws.com/wat.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20250822%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250822T094652Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=1248eb254953a50fa34d1b259672677996ec5be83a129025eb9aa3375e54b9a6"
+    },
+    {
+        id: 8,
+        type: "youtube",
+        title: "Creating Saturday Night Live: Control Room",
+        thumbnail: "https://img.youtube.com/vi/KpAyaJuyN8s/maxresdefault.jpg",
+        description: "Director Don Roy King and crew share how an episode goes from script to stage. Produced by Lorne Michaels, Oz Rodriguez, Matt Yonks, Chris Voss, Erin Doyle. Edited by Sean McIlraith.",
+        reason: "A fascinating behind-the-scenes look at the organized chaos of live television production. Watching the control room orchestrate the complex dance of cameras, timing, and real-time decision-making reveals the incredible precision required to make live TV look effortless. It's a masterclass in high-pressure teamwork and technical execution.",
+        url: "https://www.youtube.com/watch?v=KpAyaJuyN8s"
     }
 ];
 
@@ -119,6 +138,9 @@ function getEmbedUrl(video) {
     } else if (video.type === 'twitter') {
         // For Twitter, we'll handle this with a special case
         return 'twitter-embed';
+    } else if (video.type === 'video') {
+        // For direct video files, return the URL as-is
+        return video.url;
     }
     return video.url;
 }
@@ -172,8 +194,33 @@ function openVideoModal(video) {
                 window.twttr.widgets.load(modalVideoContainer);
             }
         }
+    } else if (video.type === 'video') {
+        // For direct video files, use HTML5 video element
+        modalVideoContainer.innerHTML = `
+            <video id="modal-video" controls autoplay style="width: 100%; height: 100%;">
+                <source src="${video.url}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        `;
+    } else if (video.type === 'link') {
+        // For link type, show a message with link to external page and embedded video if available
+        modalVideoContainer.innerHTML = `
+            <div style="text-align: center; padding: 20px;">
+                ${video.videoUrl ? `
+                    <video controls autoplay style="width: 100%; max-width: 800px; margin-bottom: 20px;">
+                        <source src="${video.videoUrl}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                ` : ''}
+                <p style="margin-bottom: 20px;">This video is hosted externally.</p>
+                <a href="${video.url}" target="_blank" rel="noopener noreferrer" 
+                   style="display: inline-block; padding: 12px 24px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                    Watch on Destroy All Software →
+                </a>
+            </div>
+        `;
     } else {
-        // For other video types, use iframe
+        // For other video types (YouTube), use iframe
         modalVideo.src = getEmbedUrl(video);
     }
     

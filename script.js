@@ -18,14 +18,6 @@ const videos = [
     },
     {
         id: 3,
-        title: "2020 Founder's Fund Opening Video",
-        thumbnail: "https://img.youtube.com/vi/Gvf547kGOXs/maxresdefault.jpg",
-        description: "A motivational and inspiring video that captures the entrepreneurial spirit and vision for the future.",
-        reason: "The way this video builds inspiration and motivation is incredible. It perfectly balances ambition with authenticity, creating a compelling vision that feels both grand and achievable.",
-        url: "https://www.youtube.com/watch?v=Gvf547kGOXs"
-    },
-    {
-        id: 4,
         title: "2020 Founder's Fund Opening Video (Narration Version)",
         thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
         description: "The same inspiring content with a specific narrative approach that adds another layer of engagement.",

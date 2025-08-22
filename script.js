@@ -20,8 +20,8 @@ const videos = [
         id: 3,
         title: "2020 Founder's Fund Opening Video (Narration Version)",
         thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
-        description: "The same inspiring content with a specific narrative approach that adds another layer of engagement.",
-        reason: "The narration style here creates an even more specific vibe and emotional connection. It shows how voice and delivery can completely transform the feel of content while maintaining the core message.",
+        description: "A supercut of inspirational clips spanning decades, blending historical and contemporary footage into a cohesive motivational narrative.",
+        reason: "This is my go-to video when I need inspiration - the format is brilliant because it's nearly impossible to track down all the original source clips. The curation of old and new footage creates this timeless feeling that innovation and ambition transcend eras. It's the kind of video that rewards repeat viewing, which is why I find myself coming back to it constantly.",
         url: "https://www.youtube.com/watch?v=464eT8G3dRc"
     }
 ];

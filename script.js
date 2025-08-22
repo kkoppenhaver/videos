@@ -31,6 +31,14 @@ const videos = [
         description: "A classic IT comedy sketch about a disastrous tech support call that cascades into multiple system failures, featuring incompetent sales staff and frustrated IT workers.",
         reason: "The over-the-shoulder perspective makes this feel incredibly authentic - like you're actually looking at someone's screen during a real disaster. It has that meme-like quality while staying grounded in realistic workplace chaos. The absurd humor works because the IT worker remains sympathetic even as everything spirals out of control around him, capturing the perfect storm of miscommunication and technical incompetence.",
         url: "https://www.youtube.com/watch?v=uRGljemfwUE"
+    },
+    {
+        id: 5,
+        title: "Adam Neely - Reharmonizing Adele's \"Hello\"",
+        thumbnail: "https://img.youtube.com/vi/fuqsEl_0nSg/maxresdefault.jpg",
+        description: "Adam Neely breaks down his jazz reharmonization of Adele's \"Hello,\" explaining how different chord progressions can enhance a song's emotional storytelling through detailed music theory and live recording footage.",
+        reason: "The perfect blend of technical depth and accessibility - Neely explains complex harmony concepts in plain English, then immediately lets you hear what he's talking about. Watching the actual recording process while understanding the 'why' behind each musical choice makes abstract theory concepts crystal clear. It's music education that speaks to both musicians and curious listeners.",
+        url: "https://www.youtube.com/watch?v=fuqsEl_0nSg"
     }
 ];
 

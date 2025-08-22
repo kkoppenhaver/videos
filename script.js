@@ -81,6 +81,24 @@ const videos = [
         description: "Jon Bellion takes viewers behind the scenes of creating his song 'Guillotine,' showing the creative process from conception to completion.",
         reason: "A rare glimpse into the artistic process of a meticulous creator. Watching Bellion work reveals how modern music production blends technical skill with creative intuition. The authentic documentation of creative decision-making shows the vulnerable side of artistry - the uncertainty, experimentation, and moments of breakthrough that make great music.",
         url: "https://www.youtube.com/watch?v=TGO-CAImUeY"
+    },
+    {
+        id: 10,
+        type: "youtube",
+        title: "The Perfect PokéRap | Unraveled LIVE at PAX East 2019",
+        thumbnail: "https://img.youtube.com/vi/2cT6ULpScZA/maxresdefault.jpg",
+        description: "At PAX East 2019, Brian David Gilbert revealed his magnum opus: the perfect PokéRap. It has every Pokémon, is emotionally vulnerable, and includes interpretive dance. What more could you want?",
+        reason: "A masterclass in conference presentation that transcends its gaming topic. Gilbert combines meticulous research, emotional storytelling, and physical performance to create something unforgettable. It's proof that great talks aren't just about information - they're about creating an experience that connects with the audience on multiple levels.",
+        url: "https://www.youtube.com/watch?v=2cT6ULpScZA"
+    },
+    {
+        id: 11,
+        type: "youtube",
+        title: "6 Days To Air: The Making Of South Park",
+        thumbnail: "https://img.youtube.com/vi/hU83PE68oNY/hqdefault.jpg",
+        description: "Let's go down to South Park Studios and find out how Trey Parker and Matt Stone make half hour episodes in just a week before airing.",
+        reason: "People can do amazing things in a short time given the proper resources. This documentary proves that tight deadlines don't have to compromise quality - they can actually force innovation and creativity. Watching Parker and Stone's process reveals how constraints can become creative catalysts when you have the right team and tools.",
+        url: "https://www.youtube.com/watch?v=hU83PE68oNY"
     }
 ];
 

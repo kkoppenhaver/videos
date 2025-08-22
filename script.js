@@ -109,6 +109,30 @@ function openVideoModal(video) {
     // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Focus on modal to ensure it can capture keyboard events
+    modal.focus();
+    
+    // Add direct keydown listener to modal for escape key
+    const handleModalKeydown = (e) => {
+        if (e.key === 'Escape') {
+            closeVideoModal();
+        }
+    };
+    modal.addEventListener('keydown', handleModalKeydown);
+    
+    // Periodically refocus on modal to handle iframe focus stealing
+    const focusInterval = setInterval(() => {
+        if (modal.style.display === 'block') {
+            modal.focus();
+        } else {
+            clearInterval(focusInterval);
+        }
+    }, 1000); // Check every second
+    
+    // Store the handler and interval so we can clean them up later
+    modal._escapeHandler = handleModalKeydown;
+    modal._focusInterval = focusInterval;
 }
 
 // Function to close video modal
@@ -122,6 +146,16 @@ function closeVideoModal() {
     
     // Stop video by clearing src
     modalVideo.src = '';
+    
+    // Clean up the modal keydown listener and focus interval
+    if (modal._escapeHandler) {
+        modal.removeEventListener('keydown', modal._escapeHandler);
+        modal._escapeHandler = null;
+    }
+    if (modal._focusInterval) {
+        clearInterval(modal._focusInterval);
+        modal._focusInterval = null;
+    }
 }
 
 // Initialize the page when DOM is loaded

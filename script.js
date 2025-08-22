@@ -92,11 +92,26 @@ function openVideoModal(video) {
     const modalDescription = document.getElementById('modal-description');
     const modalReason = document.getElementById('modal-reason');
     
+    console.log('Opening modal for video:', video);
+    console.log('Modal elements found:', {
+        modal: !!modal,
+        modalVideo: !!modalVideo,
+        modalTitle: !!modalTitle,
+        modalDescription: !!modalDescription,
+        modalReason: !!modalReason
+    });
+    
     // Set modal content
     modalTitle.textContent = video.title;
     modalDescription.textContent = video.description;
     modalReason.textContent = video.reason;
     modalVideo.src = getYouTubeEmbedUrl(video.url);
+    
+    console.log('Modal content set:', {
+        title: video.title,
+        description: video.description,
+        reason: video.reason
+    });
     
     // Show modal
     modal.style.display = 'block';

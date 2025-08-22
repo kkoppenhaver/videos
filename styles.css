@@ -215,7 +215,7 @@ footer {
     width: 90%;
     max-width: 1000px;
     max-height: 90vh;
-    overflow: hidden;
+    overflow-y: auto;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -263,6 +263,9 @@ footer {
 .modal-info {
     padding: 1.5rem;
     flex-grow: 1;
+    background: white;
+    min-height: 200px;
+    border-top: 1px solid #eee;
 }
 
 .modal-info h3 {
@@ -275,10 +278,33 @@ footer {
     margin: 0 0 1rem 0;
     color: #666;
     line-height: 1.5;
+    font-size: 1rem;
+}
+
+#modal-description {
+    background: #f8f9fa;
+    padding: 0.75rem;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    font-size: 1rem;
+    color: #333;
 }
 
 .modal-info .video-reason {
     margin-top: 1rem;
+    background: #e8f4f8;
+    border-left: 4px solid #2c3e50;
+    padding: 1rem;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+    color: #555;
+}
+
+.modal-info .video-reason::before {
+    content: "Why I love it: ";
+    font-weight: 600;
+    color: #2c3e50;
+    font-style: normal;
 }
 
 @media (max-width: 768px) {

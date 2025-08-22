@@ -99,6 +99,15 @@ const videos = [
         description: "Let's go down to South Park Studios and find out how Trey Parker and Matt Stone make half hour episodes in just a week before airing.",
         reason: "People can do amazing things in a short time given the proper resources. This documentary proves that tight deadlines don't have to compromise quality - they can actually force innovation and creativity. Watching Parker and Stone's process reveals how constraints can become creative catalysts when you have the right team and tools.",
         url: "https://www.youtube.com/watch?v=hU83PE68oNY"
+    },
+    {
+        id: 12,
+        type: "youtube",
+        title: "Experienced Keyboardist Hears Popular Song for the First Time",
+        thumbnail: "https://img.youtube.com/vi/5WJ1PUHfozI/hqdefault.jpg",
+        description: "An experienced keyboard player hearing a popular song for the first time has to make up a keyboard part given his expertise, creating a completely different arrangement from the original.",
+        reason: "A brilliant demonstration of how expertise and creativity intersect. Watching a seasoned musician translate what they hear into their own interpretation in real-time shows the magic of musical intuition and years of experience. It's fascinating to see how professional knowledge can transform familiar material into something entirely new.",
+        url: "https://www.youtube.com/watch?v=5WJ1PUHfozI"
     }
 ];
 

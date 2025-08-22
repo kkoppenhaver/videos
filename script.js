@@ -72,6 +72,15 @@ const videos = [
         description: "Director Don Roy King and crew share how an episode goes from script to stage. Produced by Lorne Michaels, Oz Rodriguez, Matt Yonks, Chris Voss, Erin Doyle. Edited by Sean McIlraith.",
         reason: "A fascinating behind-the-scenes look at the organized chaos of live television production. Watching the control room orchestrate the complex dance of cameras, timing, and real-time decision-making reveals the incredible precision required to make live TV look effortless. It's a masterclass in high-pressure teamwork and technical execution.",
         url: "https://www.youtube.com/watch?v=KpAyaJuyN8s"
+    },
+    {
+        id: 9,
+        type: "youtube",
+        title: "Jon Bellion - Behind the Scenes of 'Guillotine'",
+        thumbnail: "https://img.youtube.com/vi/TGO-CAImUeY/maxresdefault.jpg",
+        description: "Jon Bellion takes viewers behind the scenes of creating his song 'Guillotine,' showing the creative process from conception to completion.",
+        reason: "A rare glimpse into the artistic process of a meticulous creator. Watching Bellion work reveals how modern music production blends technical skill with creative intuition. The authentic documentation of creative decision-making shows the vulnerable side of artistry - the uncertainty, experimentation, and moments of breakthrough that make great music.",
+        url: "https://www.youtube.com/watch?v=TGO-CAImUeY"
     }
 ];
 

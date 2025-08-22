@@ -50,9 +50,9 @@ function createVideoCard(video) {
         </div>
     `;
     
-    // Add click event to open video
+    // Add click event to open video in modal
     card.addEventListener('click', () => {
-        window.open(video.url, '_blank');
+        openVideoModal(video);
     });
     
     return card;
@@ -86,14 +86,78 @@ function addVideo(videoData) {
     renderVideos();
 }
 
+// Function to convert YouTube URL to embed URL
+function getYouTubeEmbedUrl(url) {
+    const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+    return videoId ? `https://www.youtube.com/embed/${videoId[1]}?autoplay=1` : url;
+}
+
+// Function to open video modal
+function openVideoModal(video) {
+    const modal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalReason = document.getElementById('modal-reason');
+    
+    // Set modal content
+    modalTitle.textContent = video.title;
+    modalDescription.textContent = video.description;
+    modalReason.textContent = video.reason;
+    modalVideo.src = getYouTubeEmbedUrl(video.url);
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+}
+
+// Function to close video modal
+function closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const modalVideo = document.getElementById('modal-video');
+    
+    // Hide modal
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+    
+    // Stop video by clearing src
+    modalVideo.src = '';
+}
+
 // Initialize the page when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     renderVideos();
+    
+    // Add modal event listeners
+    const modal = document.getElementById('video-modal');
+    const closeBtn = document.querySelector('.close');
+    
+    // Close modal when clicking X button
+    closeBtn.addEventListener('click', closeVideoModal);
+    
+    // Close modal when clicking outside of modal content
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeVideoModal();
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            const modal = document.getElementById('video-modal');
+            if (modal.style.display === 'block') {
+                closeVideoModal();
+            }
+        }
+    });
 });
 
 // Export functions for potential future use
 window.videoApp = {
     addVideo,
     renderVideos,
-    videos
+    videos,
+    openVideoModal,
+    closeVideoModal
 };

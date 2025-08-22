@@ -53,6 +53,15 @@ const videos = [
         description: "An AI-generated video that showcases the absurd and compelling possibilities of artificial intelligence in creative content generation.",
         reason: "This represents AI-generated content at its best - absurd and compelling in a way that encourages us to imagine a world other than our own. It demonstrates how AI can push creative boundaries and challenge our perceptions of what's possible, making us question the nature of reality and creativity itself.",
         url: "https://x.com/minchoi/status/1957649251762053590"
+    },
+    {
+        id: 7,
+        type: "youtube",
+        title: "Jacob Collier Explains Music in 5 Levels of Difficulty ft. Herbie Hancock | WIRED",
+        thumbnail: "https://img.youtube.com/vi/eRkgK4jfi6M/maxresdefault.jpg",
+        description: "Jacob Collier explains the concept of harmony to 5 different people at increasing levels of complexity - from a child to jazz legend Herbie Hancock - demonstrating true mastery through adaptive teaching.",
+        reason: "This perfectly demonstrates what real understanding looks like - the ability to break down complex concepts at multiple levels shows he truly gets it. By letting viewers check in at whatever level of complexity they're comfortable with, it makes sophisticated music theory accessible while still reaching expert depth. It's educational content that serves everyone simultaneously.",
+        url: "https://www.youtube.com/watch?v=eRkgK4jfi6M"
     }
 ];
 
@@ -117,12 +126,8 @@ function getEmbedUrl(video) {
         const videoId = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
         return videoId ? `https://www.youtube.com/embed/${videoId[1]}?autoplay=1` : video.url;
     } else if (video.type === 'twitter') {
-        // Extract tweet ID from various Twitter/X URL formats
-        const tweetId = video.url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
-        if (tweetId) {
-            // Use Twitter's embed iframe approach
-            return `https://platform.twitter.com/embed/Tweet.html?id=${tweetId[1]}&theme=light&hideCard=false&hideThread=false`;
-        }
+        // For Twitter, we'll handle this with a special case
+        return 'twitter-embed';
     }
     return video.url;
 }
@@ -134,6 +139,7 @@ function openVideoModal(video) {
     const modalTitle = document.getElementById('modal-title');
     const modalDescription = document.getElementById('modal-description');
     const modalReason = document.getElementById('modal-reason');
+    const modalVideoContainer = document.querySelector('.modal-video-container');
     
     console.log('Opening modal for video:', video);
     console.log('Modal elements found:', {
@@ -148,7 +154,37 @@ function openVideoModal(video) {
     modalTitle.textContent = video.title;
     modalDescription.textContent = video.description;
     modalReason.textContent = video.reason;
-    modalVideo.src = getEmbedUrl(video);
+    
+    if (video.type === 'twitter') {
+        // For Twitter, create the embed HTML directly
+        const tweetId = video.url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
+        if (tweetId) {
+            modalVideoContainer.innerHTML = `
+                <blockquote class="twitter-tweet" data-theme="light" data-width="100%">
+                    <a href="${video.url}">Loading tweet...</a>
+                </blockquote>
+            `;
+            
+            // Load Twitter widgets script
+            if (!document.querySelector('script[src*="platform.twitter.com"]')) {
+                const script = document.createElement('script');
+                script.src = 'https://platform.twitter.com/widgets.js';
+                script.async = true;
+                script.charset = 'utf-8';
+                script.onload = () => {
+                    if (window.twttr && window.twttr.widgets) {
+                        window.twttr.widgets.load(modalVideoContainer);
+                    }
+                };
+                document.head.appendChild(script);
+            } else if (window.twttr && window.twttr.widgets) {
+                window.twttr.widgets.load(modalVideoContainer);
+            }
+        }
+    } else {
+        // For other video types, use iframe
+        modalVideo.src = getEmbedUrl(video);
+    }
     
     console.log('Modal content set:', {
         title: video.title,
@@ -189,13 +225,17 @@ function openVideoModal(video) {
 function closeVideoModal() {
     const modal = document.getElementById('video-modal');
     const modalVideo = document.getElementById('modal-video');
+    const modalVideoContainer = document.querySelector('.modal-video-container');
     
     // Hide modal
     modal.style.display = 'none';
     document.body.style.overflow = 'auto'; // Restore scrolling
     
-    // Stop video by clearing src
+    // Stop video by clearing src and resetting container
     modalVideo.src = '';
+    
+    // Reset the video container to original iframe structure
+    modalVideoContainer.innerHTML = '<iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>';
     
     // Clean up the modal keydown listener and focus interval
     if (modal._escapeHandler) {

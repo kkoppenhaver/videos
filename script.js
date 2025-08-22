@@ -27,7 +27,7 @@ const videos = [
     {
         id: 4,
         title: "The Website is Down",
-        thumbnail: "https://img.youtube.com/vi/uRGljemfwUE/maxresdefault.jpg",
+        thumbnail: "https://img.youtube.com/vi/uRGljemfwUE/hqdefault.jpg",
         description: "A classic IT comedy sketch about a disastrous tech support call that cascades into multiple system failures, featuring incompetent sales staff and frustrated IT workers.",
         reason: "The over-the-shoulder perspective makes this feel incredibly authentic - like you're actually looking at someone's screen during a real disaster. It has that meme-like quality while staying grounded in realistic workplace chaos. The absurd humor works because the IT worker remains sympathetic even as everything spirals out of control around him, capturing the perfect storm of miscommunication and technical incompetence.",
         url: "https://www.youtube.com/watch?v=uRGljemfwUE"

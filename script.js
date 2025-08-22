@@ -146,7 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
             const modal = document.getElementById('video-modal');
-            if (modal.style.display === 'block') {
+            const computedStyle = window.getComputedStyle(modal);
+            if (computedStyle.display !== 'none') {
                 closeVideoModal();
             }
         }

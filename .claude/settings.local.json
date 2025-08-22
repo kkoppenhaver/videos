@@ -5,7 +5,8 @@
       "Bash(open /Users/keanan/code/videoswipefile/index.html)",
       "WebFetch(domain:www.youtube.com)",
       "WebSearch",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "WebFetch(domain:x.com)"
     ],
     "deny": [],
     "ask": []

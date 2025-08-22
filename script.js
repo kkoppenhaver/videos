@@ -2,6 +2,7 @@
 const videos = [
     {
         id: 1,
+        type: "youtube",
         title: "We need to talk",
         thumbnail: "https://img.youtube.com/vi/lb-B2zi9DtY/maxresdefault.jpg",
         description: "A masterfully deceptive cinematic piece that feels like a genuine documentary before revealing itself as an advertisement.",
@@ -10,6 +11,7 @@ const videos = [
     },
     {
         id: 2,
+        type: "youtube",
         title: "Mastering Postgres hype video",
         thumbnail: "https://img.youtube.com/vi/moofRHEvCN0/maxresdefault.jpg",
         description: "Aaron Francis's behind-the-scenes look at creating his Postgres course, combining promotion with authentic process documentation.",
@@ -18,6 +20,7 @@ const videos = [
     },
     {
         id: 3,
+        type: "youtube",
         title: "2020 Founder's Fund Opening Video (Narration Version)",
         thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
         description: "A supercut of inspirational clips spanning decades, blending historical and contemporary footage into a cohesive motivational narrative.",
@@ -26,6 +29,7 @@ const videos = [
     },
     {
         id: 4,
+        type: "youtube",
         title: "The Website is Down",
         thumbnail: "https://img.youtube.com/vi/uRGljemfwUE/hqdefault.jpg",
         description: "A classic IT comedy sketch about a disastrous tech support call that cascades into multiple system failures, featuring incompetent sales staff and frustrated IT workers.",
@@ -34,11 +38,21 @@ const videos = [
     },
     {
         id: 5,
+        type: "youtube",
         title: "Adam Neely - Reharmonizing Adele's \"Hello\"",
         thumbnail: "https://img.youtube.com/vi/fuqsEl_0nSg/maxresdefault.jpg",
         description: "Adam Neely breaks down his jazz reharmonization of Adele's \"Hello,\" explaining how different chord progressions can enhance a song's emotional storytelling through detailed music theory and live recording footage.",
         reason: "The perfect blend of technical depth and accessibility - Neely explains complex harmony concepts in plain English, then immediately lets you hear what he's talking about. Watching the actual recording process while understanding the 'why' behind each musical choice makes abstract theory concepts crystal clear. It's music education that speaks to both musicians and curious listeners.",
         url: "https://www.youtube.com/watch?v=fuqsEl_0nSg"
+    },
+    {
+        id: 6,
+        type: "twitter",
+        title: "Min Choi - AI Generated Video",
+        thumbnail: "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
+        description: "An AI-generated video that showcases the absurd and compelling possibilities of artificial intelligence in creative content generation.",
+        reason: "This represents AI-generated content at its best - absurd and compelling in a way that encourages us to imagine a world other than our own. It demonstrates how AI can push creative boundaries and challenge our perceptions of what's possible, making us question the nature of reality and creativity itself.",
+        url: "https://x.com/minchoi/status/1957649251762053590"
     }
 ];
 
@@ -87,17 +101,30 @@ function renderVideos() {
 
 // Function to add a new video (for future use)
 function addVideo(videoData) {
-    videos.push({
+    // Set default type to youtube if not specified
+    const video = {
         id: videos.length + 1,
+        type: 'youtube',
         ...videoData
-    });
+    };
+    videos.push(video);
     renderVideos();
 }
 
-// Function to convert YouTube URL to embed URL
-function getYouTubeEmbedUrl(url) {
-    const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
-    return videoId ? `https://www.youtube.com/embed/${videoId[1]}?autoplay=1` : url;
+// Function to convert URLs to embed URLs based on type
+function getEmbedUrl(video) {
+    if (video.type === 'youtube') {
+        const videoId = video.url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\n?#]+)/);
+        return videoId ? `https://www.youtube.com/embed/${videoId[1]}?autoplay=1` : video.url;
+    } else if (video.type === 'twitter') {
+        // Extract tweet ID from various Twitter/X URL formats
+        const tweetId = video.url.match(/(?:twitter\.com|x\.com)\/\w+\/status\/(\d+)/);
+        if (tweetId) {
+            // Use Twitter's embed iframe approach
+            return `https://platform.twitter.com/embed/Tweet.html?id=${tweetId[1]}&theme=light&hideCard=false&hideThread=false`;
+        }
+    }
+    return video.url;
 }
 
 // Function to open video modal
@@ -121,7 +148,7 @@ function openVideoModal(video) {
     modalTitle.textContent = video.title;
     modalDescription.textContent = video.description;
     modalReason.textContent = video.reason;
-    modalVideo.src = getYouTubeEmbedUrl(video.url);
+    modalVideo.src = getEmbedUrl(video);
     
     console.log('Modal content set:', {
         title: video.title,

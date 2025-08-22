@@ -47,15 +47,6 @@ const videos = [
     },
     {
         id: 6,
-        type: "twitter",
-        title: "Min Choi - AI Generated Video",
-        thumbnail: "https://abs.twimg.com/icons/apple-touch-icon-192x192.png",
-        description: "An AI-generated video that showcases the absurd and compelling possibilities of artificial intelligence in creative content generation.",
-        reason: "This represents AI-generated content at its best - absurd and compelling in a way that encourages us to imagine a world other than our own. It demonstrates how AI can push creative boundaries and challenge our perceptions of what's possible, making us question the nature of reality and creativity itself.",
-        url: "https://x.com/minchoi/status/1957649251762053590"
-    },
-    {
-        id: 7,
         type: "youtube",
         title: "Jacob Collier Explains Music in 5 Levels of Difficulty ft. Herbie Hancock | WIRED",
         thumbnail: "https://img.youtube.com/vi/eRkgK4jfi6M/maxresdefault.jpg",

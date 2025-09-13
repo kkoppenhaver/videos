@@ -15,7 +15,7 @@ const videos = [
         title: "2020 Founder's Fund Opening Video (Narration Version)",
         thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
         description: "A supercut of inspirational clips spanning decades, blending historical and contemporary footage into a cohesive motivational narrative.",
-        reason: "I really love this format. It's equal parts nostalgia and inspiration. The age of the clips remind people of everything that's come before, with the voiceover inspiring people to dream bigger for the future. I like this one not as much for the content, but more for the general vibe.",
+        reason: "I really love this format. It's equal parts nostalgia and inspiration. The age of the clips remind people of everything that's come before, with the voiceover inspiring people to dream bigger for the future. I like this one not as much for the content (or the narrator), but more for the general vibe.",
         url: "https://www.youtube.com/watch?v=464eT8G3dRc"
     },
     {

@@ -3,110 +3,92 @@ const videos = [
     {
         id: 1,
         type: "youtube",
-        title: "We need to talk",
-        thumbnail: "https://img.youtube.com/vi/lb-B2zi9DtY/maxresdefault.jpg",
-        description: "A masterfully deceptive cinematic piece that feels like a genuine documentary before revealing itself as an advertisement.",
-        reason: "What I love about this is how it manipulates viewer emotions through pure cinematography - it draws you in with documentary-style authenticity, then hits you with the reveal. The visual storytelling is so compelling that you forget you're watching an ad. Perfect example of how to use cinematic techniques to create emotional investment.",
-        url: "https://www.youtube.com/watch?v=lb-B2zi9DtY"
+        title: "Mastering Postgres hype video",
+        thumbnail: "https://img.youtube.com/vi/moofRHEvCN0/maxresdefault.jpg",
+        description: "Another ad, this time for a database course, but done in a way where you can't help root for the protaganist.",
+        reason: "Again, an ad where you get invested, this time in Aaron creating the course. It's not an ad that shouts at you about what's in the course, but that's revealed in a way that's authentic through the course of the ad. It has his individual personality in it, which is a big reason his courses do as well as they do. Here he shows his work and it pays off.",
+        url: "https://www.youtube.com/watch?v=moofRHEvCN0"
     },
     {
         id: 2,
         type: "youtube",
-        title: "Mastering Postgres hype video",
-        thumbnail: "https://img.youtube.com/vi/moofRHEvCN0/maxresdefault.jpg",
-        description: "Aaron Francis's behind-the-scenes look at creating his Postgres course, combining promotion with authentic process documentation.",
-        reason: "I love how this feels like DVD bonus features - showing the real process behind creating something rather than just the polished end result. Aaron's authenticity shines through as he documents his journey, making the promotional aspect feel genuine and engaging. It's a masterclass in how to build anticipation by showing your work, not just selling it.",
-        url: "https://www.youtube.com/watch?v=moofRHEvCN0"
+        title: "2020 Founder's Fund Opening Video (Narration Version)",
+        thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
+        description: "A supercut of inspirational clips spanning decades, blending historical and contemporary footage into a cohesive motivational narrative.",
+        reason: "I really love this format. It's equal parts nostalgia and inspiration. The age of the clips remind people of everything that's come before, with the voiceover inspiring people to dream bigger for the future. I like this one not as much for the content, but more for the general vibe.",
+        url: "https://www.youtube.com/watch?v=464eT8G3dRc"
     },
     {
         id: 3,
         type: "youtube",
-        title: "2020 Founder's Fund Opening Video (Narration Version)",
-        thumbnail: "https://img.youtube.com/vi/464eT8G3dRc/maxresdefault.jpg",
-        description: "A supercut of inspirational clips spanning decades, blending historical and contemporary footage into a cohesive motivational narrative.",
-        reason: "This is my go-to video when I need inspiration - the format is brilliant because it's nearly impossible to track down all the original source clips. The curation of old and new footage creates this timeless feeling that innovation and ambition transcend eras. It's the kind of video that rewards repeat viewing, which is why I find myself coming back to it constantly.",
-        url: "https://www.youtube.com/watch?v=464eT8G3dRc"
+        title: "Adam Neely - Reharmonizing Adele's \"Hello\"",
+        thumbnail: "https://img.youtube.com/vi/fuqsEl_0nSg/maxresdefault.jpg",
+        description: "Adam Neely completely reharmonizes Adele's \"Hello,\", explaining how different chord progressions can enhance a song's emotional storytelling through detailed music theory and live recording footage.",
+        reason: "To me, this is the perfect blend of technical depth and accessibility. The combination of theory in the studio and hearing that theory in practice is paced just right to keep you both learning and applying that knowledge almost instantly and lets you appreciate the end product even more.",
+        url: "https://www.youtube.com/watch?v=fuqsEl_0nSg"
     },
     {
         id: 4,
         type: "youtube",
-        title: "The Website is Down",
-        thumbnail: "https://img.youtube.com/vi/uRGljemfwUE/hqdefault.jpg",
-        description: "A classic IT comedy sketch about a disastrous tech support call that cascades into multiple system failures, featuring incompetent sales staff and frustrated IT workers.",
-        reason: "The over-the-shoulder perspective makes this feel incredibly authentic - like you're actually looking at someone's screen during a real disaster. It has that meme-like quality while staying grounded in realistic workplace chaos. The absurd humor works because the IT worker remains sympathetic even as everything spirals out of control around him, capturing the perfect storm of miscommunication and technical incompetence.",
-        url: "https://www.youtube.com/watch?v=uRGljemfwUE"
-    },
-    {
-        id: 5,
-        type: "youtube",
-        title: "Adam Neely - Reharmonizing Adele's \"Hello\"",
-        thumbnail: "https://img.youtube.com/vi/fuqsEl_0nSg/maxresdefault.jpg",
-        description: "Adam Neely breaks down his jazz reharmonization of Adele's \"Hello,\" explaining how different chord progressions can enhance a song's emotional storytelling through detailed music theory and live recording footage.",
-        reason: "The perfect blend of technical depth and accessibility - Neely explains complex harmony concepts in plain English, then immediately lets you hear what he's talking about. Watching the actual recording process while understanding the 'why' behind each musical choice makes abstract theory concepts crystal clear. It's music education that speaks to both musicians and curious listeners.",
-        url: "https://www.youtube.com/watch?v=fuqsEl_0nSg"
-    },
-    {
-        id: 6,
-        type: "youtube",
         title: "Jacob Collier Explains Music in 5 Levels of Difficulty ft. Herbie Hancock | WIRED",
         thumbnail: "https://img.youtube.com/vi/eRkgK4jfi6M/maxresdefault.jpg",
         description: "Jacob Collier explains the concept of harmony to 5 different people at increasing levels of complexity - from a child to jazz legend Herbie Hancock - demonstrating true mastery through adaptive teaching.",
-        reason: "This perfectly demonstrates what real understanding looks like - the ability to break down complex concepts at multiple levels shows he truly gets it. By letting viewers check in at whatever level of complexity they're comfortable with, it makes sophisticated music theory accessible while still reaching expert depth. It's educational content that serves everyone simultaneously.",
+        reason: "This perfectly demonstrates what real understanding looks like. I don't see a ton of this in videos where you can choose your own adventure like this, but it's a good way to make sure that knowledge sticks.",
         url: "https://www.youtube.com/watch?v=eRkgK4jfi6M"
     },
     {
-        id: 7,
+        id: 5,
         type: "link",
         title: "Wat",
         thumbnail: "https://i.imgur.com/KDnr4c9.png",
         description: "Gary Bernhardt's legendary lightning talk exploring JavaScript's bizarre type coercion behaviors and other programming language quirks through rapid-fire examples.",
-        reason: "A masterclass in technical comedy that manages to be both hilarious and educational. The rapid-fire delivery keeps you engaged while systematically exposing the absurdities in JavaScript's type system. It's the perfect blend of programming insight and entertainment that makes complex concepts memorable through humor.",
+        reason: "I love talks that combine humor and learning and this definitely does. The pace is perfect, even though it's so short and you can feel how the timings land. It's probably one of my most shared videos and definitely an inspiration as I'm putting together my talks.",
         url: "https://www.destroyallsoftware.com/talks/wat",
         videoUrl: "https://destroyallsoftware-talks.s3.amazonaws.com/wat.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIKRVCECXBC4ZGHIQ%2F20250822%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250822T094652Z&X-Amz-Expires=14400&X-Amz-SignedHeaders=host&X-Amz-Signature=1248eb254953a50fa34d1b259672677996ec5be83a129025eb9aa3375e54b9a6"
     },
     {
-        id: 8,
+        id: 6,
         type: "youtube",
         title: "Creating Saturday Night Live: Control Room",
         thumbnail: "https://img.youtube.com/vi/KpAyaJuyN8s/maxresdefault.jpg",
-        description: "Director Don Roy King and crew share how an episode goes from script to stage. Produced by Lorne Michaels, Oz Rodriguez, Matt Yonks, Chris Voss, Erin Doyle. Edited by Sean McIlraith.",
-        reason: "A fascinating behind-the-scenes look at the organized chaos of live television production. Watching the control room orchestrate the complex dance of cameras, timing, and real-time decision-making reveals the incredible precision required to make live TV look effortless. It's a masterclass in high-pressure teamwork and technical execution.",
+        description: "Director Don Roy King and crew share how an episode goes from script to stage, in just one week.",
+        reason: "I've always really enjoyed the format of SNL and the idea that an entire show comes together in a week, every week. This is an amazing behind the scenes look at everything that it takes to make that happen. Imagine a launch announcement video that showed all the behind the scenes magic it took to make it happen.",
         url: "https://www.youtube.com/watch?v=KpAyaJuyN8s"
     },
     {
-        id: 9,
+        id: 7,
         type: "youtube",
         title: "Jon Bellion - Behind the Scenes of 'Guillotine'",
         thumbnail: "https://img.youtube.com/vi/TGO-CAImUeY/maxresdefault.jpg",
         description: "Jon Bellion takes viewers behind the scenes of creating his song 'Guillotine,' showing the creative process from conception to completion.",
-        reason: "A rare glimpse into the artistic process of a meticulous creator. Watching Bellion work reveals how modern music production blends technical skill with creative intuition. The authentic documentation of creative decision-making shows the vulnerable side of artistry - the uncertainty, experimentation, and moments of breakthrough that make great music.",
+        reason: "As this list shows, I'm a big fan of behind the scenes content. I think a look into the mind of someone who creates something, especially in this sort of informal format, tells you a lot as someone who wants to create something similar. And the authenticity and vulnerability helps you connect with the creator as a person.",
         url: "https://www.youtube.com/watch?v=TGO-CAImUeY"
     },
     {
-        id: 10,
+        id: 8,
         type: "youtube",
         title: "The Perfect PokéRap | Unraveled LIVE at PAX East 2019",
         thumbnail: "https://img.youtube.com/vi/2cT6ULpScZA/maxresdefault.jpg",
         description: "At PAX East 2019, Brian David Gilbert revealed his magnum opus: the perfect PokéRap. It has every Pokémon, is emotionally vulnerable, and includes interpretive dance. What more could you want?",
-        reason: "A masterclass in conference presentation that transcends its gaming topic. Gilbert combines meticulous research, emotional storytelling, and physical performance to create something unforgettable. It's proof that great talks aren't just about information - they're about creating an experience that connects with the audience on multiple levels.",
+        reason: "A masterclass in conference presentation that goes far beyond the title topic. BDG combines meticulous research, emotional storytelling, and physical performance to create something that I've never been able to forget. I try to remember it when putting together a talk and deciding what type of hook or overarching story it can tell while it educates.",
         url: "https://www.youtube.com/watch?v=2cT6ULpScZA"
     },
     {
-        id: 11,
+        id: 9,
         type: "youtube",
         title: "6 Days To Air: The Making Of South Park",
         thumbnail: "https://img.youtube.com/vi/hU83PE68oNY/hqdefault.jpg",
         description: "Let's go down to South Park Studios and find out how Trey Parker and Matt Stone make half hour episodes in just a week before airing.",
-        reason: "People can do amazing things in a short time given the proper resources. This documentary proves that tight deadlines don't have to compromise quality - they can actually force innovation and creativity. Watching Parker and Stone's process reveals how constraints can become creative catalysts when you have the right team and tools.",
+        reason: "Similar to the SNL clip, it's insane to me that some folks can have this kind of creativity on a deadline. I really enjoy that it also reveals some of the things that needed to be compromised on to hit that deadline.",
         url: "https://www.youtube.com/watch?v=hU83PE68oNY"
     },
     {
-        id: 12,
+        id: 10,
         type: "youtube",
         title: "Experienced Keyboardist Hears Popular Song for the First Time",
         thumbnail: "https://img.youtube.com/vi/5WJ1PUHfozI/hqdefault.jpg",
         description: "An experienced keyboard player hearing a popular song for the first time has to make up a keyboard part given his expertise, creating a completely different arrangement from the original.",
-        reason: "A brilliant demonstration of how expertise and creativity intersect. Watching a seasoned musician translate what they hear into their own interpretation in real-time shows the magic of musical intuition and years of experience. It's fascinating to see how professional knowledge can transform familiar material into something entirely new.",
+        reason: "I love seeing true professionals show off a skill that doesn't seem all the difficult on the surface, but the more you know about it, the more you appreciate about it. Again, this is a look into the creator's process and how they think about what they're creating, in a very unique way. I also really like the pacing of these videos, where they show you enough detail for you to understand, but it doesn't drag.",
         url: "https://www.youtube.com/watch?v=5WJ1PUHfozI"
     }
 ];
